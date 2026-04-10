@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "description": "Track your GBP spending with Google Wallet screenshots. Rolling daily budget, charts, and category breakdowns.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "SpendWise",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "SpendWise",
+  "start_url": "https://alanwongsai.github.io/spendwise",
+  "theme_color": "#006493"
+}

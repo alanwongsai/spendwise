@@ -1,27 +1,44 @@
 {
+  "id": "/spendwise/",
   "name": "SpendWise",
   "short_name": "SpendWise",
-  "description": "Track your GBP spending with Google Wallet screenshots",
-  "start_url": "/spendwise/",
+  "description": "Track your GBP spending with Google Wallet screenshots. Rolling daily budget and category breakdowns.",
+  "start_url": "/spendwise/index.html",
   "scope": "/spendwise/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait",
   "background_color": "#f0f4f8",
   "theme_color": "#006493",
+  "lang": "en-GB",
+  "dir": "ltr",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["finance", "productivity"],
-  "lang": "en-GB"
+  "screenshots": [],
+  "shortcuts": []
 }

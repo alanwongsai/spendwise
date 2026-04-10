@@ -6,11 +6,9 @@
   <meta name="theme-color" content="#006493">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="SpendWise">
-  <meta name="description" content="Track your GBP spending with Google Wallet screenshots. Rolling daily budget, charts, and category breakdowns.">
   <title>SpendWise</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/spendwise/manifest.json">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -425,6 +423,20 @@
     <div class="sitem-text"><div class="sitem-title" style="color:var(--error);">Clear All Data</div><div class="sitem-sub">Cannot be undone</div></div>
   </div>
   <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+
+  <div class="section-title" style="margin-top:20px;">Language / 语言</div>
+  <div class="card" style="padding:8px 16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;">
+      <div>
+        <div style="font-size:15px;font-weight:500;" data-i18n="langLabel">Display Language</div>
+        <div style="font-size:12px;color:var(--on-surface-variant);margin-top:2px;">显示语言</div>
+      </div>
+      <div style="display:flex;background:var(--surface-variant);border-radius:10px;padding:3px;gap:3px;">
+        <button id="btnEN" onclick="setLang('en')" style="padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;">EN</button>
+        <button id="btnZH" onclick="setLang('zh')" style="padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;">中文</button>
+      </div>
+    </div>
+  </div>
 
   <div class="section-title" style="margin-top:20px;">About</div>
   <div class="card" style="font-size:13px;color:var(--on-surface-variant);line-height:1.6;">
@@ -865,7 +877,7 @@ function deleteCat(id) {
   let cats=S.getCats(); let txs=S.getTxs();
   txs=txs.map(t=>t.category===id?{...t,category:'others'}:t);
   cats=cats.filter(c=>c.id!==id);
-  S.setCats(cats); S.setTxs(txs); renderSettings(); snack('Category deleted');
+  S.setCats(cats); S.setTxs(txs); renderSettings(); snack(T('catDeleted'));
 }
 
 // ═══════════════════════════════════════════════
@@ -926,14 +938,14 @@ function saveTx() {
   const amount=parseFloat(document.getElementById('txAmount').value);
   const date=document.getElementById('txDate').value;
   const category=getSelCat();
-  if(!merchant||!amount||amount<=0||!date){snack('Please fill in all fields');return;}
+  if(!merchant||!amount||amount<=0||!date){snack(T('fillFields'));return;}
   let txs=S.getTxs();
   if (editingId) {
     txs=txs.map(t=>t.id===editingId?{...t,merchant,amount,date,category}:t);
-    snack('Transaction updated ✓');
+    snack(T('txUpdated'));
   } else {
     txs.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2),merchant,amount,date,category});
-    snack('Transaction saved ✓');
+    snack(T('txSaved'));
   }
   S.setTxs(txs); closeModal('addModal'); renderPage(curPage);
 }
@@ -944,9 +956,9 @@ function editTx(id) {
 }
 
 function deleteTxCurrent() {
-  if(!editingId||!confirm('Delete this transaction?'))return;
+  if(!editingId||!confirm(T('deleteConfirm')))return;
   S.setTxs(S.getTxs().filter(t=>t.id!==editingId));
-  closeModal('addModal'); snack('Deleted'); renderPage(curPage);
+  closeModal('addModal'); snack(T('txDeleted')); renderPage(curPage);
 }
 
 // ═══════════════════════════════════════════════
@@ -972,7 +984,7 @@ async function handleImg(event) {
     }
   } catch(e) {
     document.getElementById('loader').classList.remove('show');
-    snack('Could not read screenshot — please enter manually');
+    snack(T('importFail'));
     openAdd();
   }
 }
@@ -1006,14 +1018,14 @@ function parseWallet(text) {
 // ═══════════════════════════════════════════════
 function saveNewCat() {
   const name=document.getElementById('ncName').value.trim();
-  if(!name){snack('Please enter a name');return;}
+  if(!name){snack(T('enterName'));return;}
   const emoji=document.getElementById('ncEmoji').value.trim()||'📌';
   const color=document.getElementById('ncColor').value;
   const kw=document.getElementById('ncKw').value.split(',').map(k=>k.trim().toLowerCase()).filter(k=>k);
   const id=name.toLowerCase().replace(/\s+/g,'_')+'_'+Date.now().toString(36);
   let cats=S.getCats();
   cats.splice(cats.length-1,0,{id,name,emoji,color,kw});
-  S.setCats(cats); closeModal('catModal'); renderSettings(); snack(`"${name}" created ✓`);
+  S.setCats(cats); closeModal('catModal'); renderSettings(); snack(T('catCreated', name));
 }
 
 // ═══════════════════════════════════════════════
@@ -1023,7 +1035,7 @@ function exportData() {
   const d={txs:S.getTxs(),cats:S.getCats(),budget:S.getBudget(),exportedAt:new Date().toISOString()};
   const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
   const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(blob),download:`spendwise-${todayStr()}.json`});
-  a.click(); snack('Data exported!');
+  a.click(); snack(T('dataExported'));
 }
 
 function importData(event) {
@@ -1035,16 +1047,16 @@ function importData(event) {
       if(d.txs) S.setTxs(d.txs);
       if(d.cats) S.setCats(d.cats);
       if(d.budget) S.setBudget(d.budget);
-      snack('Imported successfully!'); renderPage(curPage);
-    } catch{ snack('Invalid file — import failed'); }
+      snack(T('importedOk')); renderPage(curPage);
+    } catch{ snack(T('importFail')); }
   };
   r.readAsText(file);
 }
 
 function clearAll() {
-  if(!confirm('Clear ALL data? This cannot be undone.'))return;
+  if(!confirm(T('clearConfirm')))return;
   ['sw_txs','sw_cats','sw_budget'].forEach(k=>localStorage.removeItem(k));
-  snack('All data cleared'); renderPage(curPage);
+  snack(T('dataCleared')); renderPage(curPage);
 }
 
 // ═══════════════════════════════════════════════
@@ -1064,4 +1076,176 @@ document.querySelectorAll('.overlay').forEach(o=>{
 
 // ═══════════════════════════════════════════════
 // INIT
-// ════════════════════════════════�
+// ═══════════════════════════════════════════════
+(function init() {
+  curLang = localStorage.getItem('sw_lang') || 'en';
+  applyLang();
+  const now=new Date();
+  document.getElementById('pageSub').textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  renderDash();
+})();
+
+// ═══════════════════════════════════════════════
+// LANGUAGE / i18n
+// ═══════════════════════════════════════════════
+const LANG = {
+  en: {
+    dashboard: 'Dashboard',
+    transactions: 'Transactions',
+    budget: 'Budget',
+    settings: 'Settings',
+    todayLeft: 'Today's Budget Left',
+    ofDaily: 'of £{0} daily budget',
+    spentToday: 'Spent Today',
+    dailyBudget: 'Daily Budget',
+    monthLeft: 'Month Left',
+    weekly: 'Weekly',
+    monthly: 'Monthly',
+    noTx: 'No transactions yet.',
+    allCats: 'All',
+    monthlyBudget: 'Monthly Budget',
+    setBudget: 'Set Budget',
+    setBudgetHint: 'Enter your monthly spending limit',
+    budgetPlaceholder: 'e.g. 800',
+    categories: 'Categories',
+    dataSection: 'Data',
+    exportData: 'Export Data',
+    importData: 'Import Data',
+    clearAll: 'Clear All Data',
+    langLabel: 'Display Language',
+    about: 'About',
+    addTx: 'Add Transaction',
+    merchant: 'Merchant / Description',
+    amount: 'Amount (£)',
+    date: 'Date',
+    category: 'Category',
+    save: 'Save',
+    delete: 'Delete',
+    cancel: 'Cancel',
+    scanReceipt: 'Scan Screenshot',
+    manualEntry: 'Manual Entry',
+    fillFields: 'Please fill in all fields',
+    txSaved: 'Transaction saved ✓',
+    txUpdated: 'Transaction updated ✓',
+    txDeleted: 'Deleted',
+    dataExported: 'Data exported!',
+    importedOk: 'Imported successfully!',
+    importFail: 'Invalid file — import failed',
+    clearConfirm: 'Clear ALL data? This cannot be undone.',
+    dataCleared: 'All data cleared',
+    catCreated: '"{0}" created ✓',
+    catDeleted: 'Category deleted',
+    enterName: 'Please enter a name',
+    noBudget: 'Set a monthly budget to get started',
+    deleteConfirm: 'Delete this transaction?',
+  },
+  zh: {
+    dashboard: '概览',
+    transactions: '账单',
+    budget: '预算',
+    settings: '设置',
+    todayLeft: '今日剩余预算',
+    ofDaily: '每日预算 £{0}',
+    spentToday: '今日已花',
+    dailyBudget: '今日预算',
+    monthLeft: '本月剩余',
+    weekly: '本周',
+    monthly: '本月',
+    noTx: '暂无账单记录',
+    allCats: '全部',
+    monthlyBudget: '月度预算',
+    setBudget: '设置预算',
+    setBudgetHint: '请输入每月消费上限',
+    budgetPlaceholder: '例如 800',
+    categories: '分类',
+    dataSection: '数据',
+    exportData: '导出数据',
+    importData: '导入数据',
+    clearAll: '清除全部数据',
+    langLabel: '显示语言',
+    about: '关于',
+    addTx: '添加账单',
+    merchant: '商家 / 描述',
+    amount: '金额 (£)',
+    date: '日期',
+    category: '分类',
+    save: '保存',
+    delete: '删除',
+    cancel: '取消',
+    scanReceipt: '扫描截图',
+    manualEntry: '手动输入',
+    fillFields: '请填写所有字段',
+    txSaved: '账单已保存 ✓',
+    txUpdated: '账单已更新 ✓',
+    txDeleted: '已删除',
+    dataExported: '数据已导出！',
+    importedOk: '导入成功！',
+    importFail: '文件无效，导入失败',
+    clearConfirm: '确定清除所有数据？此操作无法撤销。',
+    dataCleared: '所有数据已清除',
+    catCreated: '"{0}" 已创建 ✓',
+    catDeleted: '分类已删除',
+    enterName: '请输入名称',
+    noBudget: '请先设置月度预算',
+    deleteConfirm: '确定删除此账单？',
+  }
+};
+
+let curLang = localStorage.getItem('sw_lang') || 'en';
+
+function T(key, ...args) {
+  let s = (LANG[curLang] || LANG.en)[key] || (LANG.en)[key] || key;
+  args.forEach((v, i) => { s = s.replace('{' + i + '}', v); });
+  return s;
+}
+
+function setLang(lang) {
+  curLang = lang;
+  localStorage.setItem('sw_lang', lang);
+  applyLang();
+  renderPage(curPage);
+}
+
+function applyLang() {
+  // Update html lang attr
+  document.documentElement.lang = curLang === 'zh' ? 'zh-Hans' : 'en';
+
+  // Update nav labels
+  const navLabels = document.querySelectorAll('.nav-label');
+  const pages = ['dashboard', 'transactions', 'budget', 'settings'];
+  navLabels.forEach((el, i) => { if (pages[i]) el.textContent = T(pages[i]); });
+
+  // Update page title
+  const titles = {
+    dashboard: T('dashboard'),
+    transactions: T('transactions'),
+    budget: T('budget'),
+    settings: T('settings')
+  };
+  document.getElementById('pageTitle').textContent = titles[curPage] || '';
+
+  // Update language toggle button styles
+  const btnEN = document.getElementById('btnEN');
+  const btnZH = document.getElementById('btnZH');
+  if (btnEN && btnZH) {
+    const activeStyle = 'background:var(--primary);color:var(--on-primary);box-shadow:0 1px 3px rgba(0,0,0,.2);';
+    const inactiveStyle = 'background:transparent;color:var(--on-surface-variant);';
+    btnEN.setAttribute('style', 'padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;' + (curLang === 'en' ? activeStyle : inactiveStyle));
+    btnZH.setAttribute('style', 'padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;' + (curLang === 'zh' ? activeStyle : inactiveStyle));
+  }
+}
+
+// ═══════════════════════════════════════════════
+// SERVICE WORKER REGISTRATION
+// ═══════════════════════════════════════════════
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/spendwise/sw.js')
+      .then(r => console.log('SW registered:', r.scope))
+      .catch(e => console.log('SW error:', e));
+  });
+}
+
+</script>
+</body>
+</html>
