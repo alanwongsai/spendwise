@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="SpendWise">
   <title>SpendWise</title>
-  <link rel="manifest" href="/spendwise/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -39,7 +39,7 @@
       padding-bottom: 80px;
     }
 
-    /* ── TOP BAR ── */
+    /* ââ TOP BAR ââ */
     .top-bar {
       background: var(--surface);
       padding: 16px 20px 12px;
@@ -49,7 +49,7 @@
     .top-bar h1 { font-size: 22px; font-weight: 600; }
     .top-bar .sub { font-size: 12px; color: var(--on-surface-variant); margin-top: 2px; }
 
-    /* ── BOTTOM NAV ── */
+    /* ââ BOTTOM NAV ââ */
     .bottom-nav {
       position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
       width: 100%; max-width: 480px;
@@ -74,11 +74,11 @@
     .nav-item .material-icons-round { font-size: 22px; }
     .nav-label { font-size: 11px; font-weight: 500; margin-top: 3px; }
 
-    /* ── PAGES ── */
+    /* ââ PAGES ââ */
     .page { display: none; padding: 16px; }
     .page.active { display: block; }
 
-    /* ── CARDS ── */
+    /* ââ CARDS ââ */
     .card {
       background: white; border-radius: 16px; padding: 16px;
       margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.07);
@@ -88,7 +88,7 @@
       text-transform: uppercase; letter-spacing: .6px; margin-bottom: 12px;
     }
 
-    /* ── HERO BUDGET CARD ── */
+    /* ââ HERO BUDGET CARD ââ */
     .hero {
       background: linear-gradient(135deg, #006493 0%, #00395a 100%);
       color: white; border-radius: 24px; padding: 22px 20px; margin-bottom: 16px;
@@ -109,7 +109,7 @@
     .progress-fill { height: 100%; border-radius: 4px; background: white; transition: width .5s ease; }
     .progress-fill.over { background: #ffb4ab; }
 
-    /* ── TABS ── */
+    /* ââ TABS ââ */
     .tabs {
       display: flex; background: var(--surface-variant); border-radius: 12px;
       padding: 3px; margin-bottom: 14px;
@@ -121,10 +121,10 @@
     }
     .tab.active { background: white; color: var(--primary); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 
-    /* ── CHART ── */
+    /* ââ CHART ââ */
     .chart-wrap { position: relative; height: 190px; }
 
-    /* ── CATEGORY BREAKDOWN ── */
+    /* ââ CATEGORY BREAKDOWN ââ */
     .cat-row { display: flex; align-items: center; margin-bottom: 10px; }
     .cat-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; flex-shrink: 0; }
     .cat-name-lbl { flex: 1; font-size: 13px; }
@@ -132,7 +132,7 @@
     .cat-bar { height: 100%; border-radius: 4px; transition: width .5s ease; }
     .cat-amt { font-size: 13px; font-weight: 600; min-width: 52px; text-align: right; }
 
-    /* ── TRANSACTION ITEMS ── */
+    /* ââ TRANSACTION ITEMS ââ */
     .tx-item {
       display: flex; align-items: center; padding: 11px 0;
       border-bottom: 1px solid var(--surface-variant); cursor: pointer;
@@ -148,7 +148,7 @@
     .tx-meta { font-size: 11px; color: var(--on-surface-variant); margin-top: 2px; }
     .tx-amount { font-size: 15px; font-weight: 600; color: var(--error); }
 
-    /* ── FAB ── */
+    /* ââ FAB ââ */
     .fab {
       position: fixed; bottom: 90px;
       right: max(16px, calc(50% - 224px));
@@ -161,7 +161,7 @@
     .fab:active { transform: scale(.94); box-shadow: 0 2px 8px rgba(0,100,147,.3); }
     .fab .material-icons-round { font-size: 26px; }
 
-    /* ── MODAL ── */
+    /* ââ MODAL ââ */
     .overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,.48); z-index: 200;
       display: flex; align-items: flex-end; justify-content: center;
@@ -178,7 +178,7 @@
     .handle { width: 32px; height: 4px; background: var(--surface-variant); border-radius: 2px; margin: 0 auto 18px; }
     .sheet-title { font-size: 18px; font-weight: 600; margin-bottom: 18px; }
 
-    /* ── FORM ── */
+    /* ââ FORM ââ */
     .field { margin-bottom: 14px; }
     .field label { display: block; font-size: 12px; font-weight: 700; color: var(--on-surface-variant); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
     .input {
@@ -189,10 +189,10 @@
     }
     .input:focus { border-color: var(--primary); }
     .pfx { position: relative; }
-    .pfx::before { content: '£'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--on-surface-variant); pointer-events: none; }
+    .pfx::before { content: 'Â£'; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--on-surface-variant); pointer-events: none; }
     .pfx .input { padding-left: 28px; }
 
-    /* ── BUTTONS ── */
+    /* ââ BUTTONS ââ */
     .btn {
       width: 100%; padding: 15px; border-radius: 12px;
       font-size: 15px; font-weight: 600; font-family: inherit;
@@ -202,7 +202,7 @@
     .btn-primary:active { background: #004c72; }
     .btn-ghost { background: var(--surface-variant); color: var(--on-surface); margin-top: 8px; }
 
-    /* ── CATEGORY SELECTOR ── */
+    /* ââ CATEGORY SELECTOR ââ */
     .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
     .cat-opt {
       padding: 10px 4px; border-radius: 12px; text-align: center; cursor: pointer;
@@ -212,7 +212,7 @@
     .cat-opt .ce { font-size: 22px; display: block; margin-bottom: 3px; }
     .cat-opt .cn { font-size: 10px; font-weight: 500; }
 
-    /* ── UPLOAD AREA ── */
+    /* ââ UPLOAD AREA ââ */
     .upload-zone {
       border: 2px dashed var(--outline); border-radius: 16px;
       padding: 32px 16px; text-align: center; cursor: pointer;
@@ -223,14 +223,14 @@
     .upload-zone p { font-size: 14px; color: var(--on-surface-variant); }
     .upload-zone strong { color: var(--on-surface); }
 
-    /* ── OCR RAW TEXT ── */
+    /* ââ OCR RAW TEXT ââ */
     .ocr-raw {
       background: var(--surface); border-radius: 10px; padding: 10px 12px;
       font-size: 11px; color: var(--on-surface-variant); max-height: 80px;
       overflow-y: auto; margin-bottom: 14px; display: none; line-height: 1.5;
     }
 
-    /* ── FILTER CHIPS ── */
+    /* ââ FILTER CHIPS ââ */
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
     .chip {
       padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
@@ -238,7 +238,7 @@
       background: white;
     }
 
-    /* ── LOADING ── */
+    /* ââ LOADING ââ */
     .loader {
       position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 300;
       display: none; align-items: center; justify-content: center;
@@ -253,7 +253,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .loader-text { font-size: 14px; }
 
-    /* ── SNACKBAR ── */
+    /* ââ SNACKBAR ââ */
     .snack {
       position: fixed; bottom: 88px; left: 16px; right: 16px; max-width: 448px;
       margin: 0 auto; background: #1a1c1e; color: white;
@@ -263,12 +263,12 @@
     }
     .snack.show { transform: translateY(0); }
 
-    /* ── EMPTY STATE ── */
+    /* ââ EMPTY STATE ââ */
     .empty { text-align: center; padding: 36px 20px; color: var(--on-surface-variant); }
     .empty .material-icons-round { font-size: 56px; opacity: .3; display: block; margin-bottom: 10px; }
     .empty p { font-size: 14px; line-height: 1.6; }
 
-    /* ── SETTINGS ── */
+    /* ââ SETTINGS ââ */
     .sitem {
       display: flex; align-items: center; padding: 14px 16px;
       background: white; border-radius: 14px; margin-bottom: 8px; cursor: pointer;
@@ -278,17 +278,17 @@
     .sitem-title { font-size: 14px; font-weight: 500; }
     .sitem-sub { font-size: 12px; color: var(--on-surface-variant); margin-top: 2px; }
 
-    /* ── BUDGET PAGE ── */
+    /* ââ BUDGET PAGE ââ */
     .budget-bar-wrap { background: var(--surface-variant); border-radius: 6px; height: 10px; overflow: hidden; margin: 8px 0 4px; }
     .budget-bar { height: 100%; border-radius: 6px; transition: width .5s; }
 
-    /* ── DATE GROUP HEADER ── */
+    /* ââ DATE GROUP HEADER ââ */
     .date-header {
       font-size: 12px; font-weight: 700; color: var(--on-surface-variant);
       padding: 0 4px; margin-bottom: 6px; display: flex; justify-content: space-between;
     }
 
-    /* ── MISC ── */
+    /* ââ MISC ââ */
     .section-title { font-size: 12px; font-weight: 700; color: var(--on-surface-variant); text-transform: uppercase; letter-spacing: .6px; padding: 0 4px 8px; }
     .row { display: flex; gap: 8px; }
     .row .btn { flex: 1; }
@@ -299,7 +299,7 @@
 <!-- LOADER -->
 <div class="loader" id="loader">
   <div class="spinner"></div>
-  <div class="loader-text" id="loaderText">Reading screenshot…</div>
+  <div class="loader-text" id="loaderText">Reading screenshotâ¦</div>
 </div>
 
 <!-- SNACKBAR -->
@@ -311,22 +311,29 @@
   <div class="sub" id="pageSub"></div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      PAGE: DASHBOARD
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="page active" id="page-dashboard">
 
   <!-- Hero budget card -->
   <div class="hero" id="hero">
     <div class="lbl">Today's remaining budget</div>
-    <div class="big"><span class="sym">£</span><span id="heroAmt">–</span></div>
+    <div class="big"><span class="sym">Â£</span><span id="heroAmt">â</span></div>
     <div class="hint" id="heroHint">Set your monthly budget to get started</div>
     <div class="progress-wrap"><div class="progress-fill" id="heroBar" style="width:0%"></div></div>
     <div class="hero-row">
-      <div class="hero-stat"><div class="sv" id="hSpent">£0.00</div><div class="sl">Spent today</div></div>
-      <div class="hero-stat"><div class="sv" id="hDaily">–</div><div class="sl">Daily budget</div></div>
-      <div class="hero-stat"><div class="sv" id="hMonthLeft">–</div><div class="sl">Month left</div></div>
+      <div class="hero-stat"><div class="sv" id="hSpent">Â£0.00</div><div class="sl">Spent today</div></div>
+      <div class="hero-stat"><div class="sv" id="hDaily">â</div><div class="sl">Daily budget</div></div>
+      <div class="hero-stat"><div class="sv" id="hMonthLeft">â</div><div class="sl">Month left</div></div>
     </div>
+  </div>
+
+  <!-- Quick Add Expense Button -->
+  <div style="padding:0 0 4px">
+    <button class="btn btn-primary" style="width:100%;padding:14px;font-size:15px;border-radius:16px;display:flex;align-items:center;justify-content:center;gap:8px" onclick="openAdd()">
+      <span class="material-icons-round" style="font-size:20px">add_circle_outline</span>Add Expense
+    </button>
   </div>
 
   <!-- Tabs -->
@@ -337,13 +344,13 @@
 
   <!-- Spending chart -->
   <div class="card">
-    <div class="card-title" id="chartLbl">Spending — This Week</div>
+    <div class="card-title" id="chartLbl">Spending â This Week</div>
     <div class="chart-wrap"><canvas id="chartMain"></canvas></div>
   </div>
 
   <!-- Category breakdown -->
   <div class="card">
-    <div class="card-title" id="catLbl">Categories — This Week</div>
+    <div class="card-title" id="catLbl">Categories â This Week</div>
     <div id="catBreakdown"><div class="empty"><p>No transactions yet.</p></div></div>
   </div>
 
@@ -354,9 +361,9 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      PAGE: TRANSACTIONS
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="page" id="page-transactions">
   <div class="card" style="padding:12px 16px;">
     <div class="row">
@@ -372,9 +379,9 @@
   <div id="txList"></div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      PAGE: BUDGET
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="page" id="page-budget">
   <div class="card">
     <div class="card-title">Monthly Budget</div>
@@ -396,9 +403,9 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      PAGE: SETTINGS
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="page" id="page-settings">
   <div class="section-title">Categories</div>
   <div id="catList"></div>
@@ -424,16 +431,16 @@
   </div>
   <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
 
-  <div class="section-title" style="margin-top:20px;">Language / 语言</div>
+  <div class="section-title" style="margin-top:20px;">Language / è¯­è¨</div>
   <div class="card" style="padding:8px 16px;">
     <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;">
       <div>
         <div style="font-size:15px;font-weight:500;" data-i18n="langLabel">Display Language</div>
-        <div style="font-size:12px;color:var(--on-surface-variant);margin-top:2px;">显示语言</div>
+        <div style="font-size:12px;color:var(--on-surface-variant);margin-top:2px;">æ¾ç¤ºè¯­è¨</div>
       </div>
       <div style="display:flex;background:var(--surface-variant);border-radius:10px;padding:3px;gap:3px;">
         <button id="btnEN" onclick="setLang('en')" style="padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;">EN</button>
-        <button id="btnZH" onclick="setLang('zh')" style="padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;">中文</button>
+        <button id="btnZH" onclick="setLang('zh')" style="padding:7px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;">ä¸­æ</button>
       </div>
     </div>
   </div>
@@ -441,7 +448,7 @@
   <div class="section-title" style="margin-top:20px;">About</div>
   <div class="card" style="font-size:13px;color:var(--on-surface-variant);line-height:1.6;">
     <strong style="color:var(--on-surface);">SpendWise v1.0</strong><br>
-    Reads Google Wallet screenshots, tracks your GBP spending, and rolls your budget forward every day. All data is stored privately on this device — no internet required.
+    Reads Google Wallet screenshots, tracks your GBP spending, and rolls your budget forward every day. All data is stored privately on this device â no internet required.
   </div>
 </div>
 
@@ -470,9 +477,9 @@
   </button>
 </nav>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      MODAL: ADD / EDIT TRANSACTION
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="overlay" id="addModal">
   <div class="sheet">
     <div class="handle"></div>
@@ -500,9 +507,9 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      MODAL: UPLOAD SCREENSHOT
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="overlay" id="uploadModal">
   <div class="sheet">
     <div class="handle"></div>
@@ -516,15 +523,15 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════
+<!-- ââââââââââââââââââââââââââââââ
      MODAL: NEW CATEGORY
-══════════════════════════════ -->
+ââââââââââââââââââââââââââââââ -->
 <div class="overlay" id="catModal">
   <div class="sheet">
     <div class="handle"></div>
     <div class="sheet-title">New Category</div>
     <div class="field"><label>Name</label><input type="text" class="input" id="ncName" placeholder="e.g. Subscriptions"></div>
-    <div class="field"><label>Emoji Icon</label><input type="text" class="input" id="ncEmoji" placeholder="e.g. 📱" maxlength="4"></div>
+    <div class="field"><label>Emoji Icon</label><input type="text" class="input" id="ncEmoji" placeholder="e.g. ð±" maxlength="4"></div>
     <div class="field"><label>Colour</label><input type="color" class="input" id="ncColor" value="#5c6bc0" style="padding:8px;height:48px;"></div>
     <div class="field"><label>Keywords (comma-separated, for auto-detection)</label><input type="text" class="input" id="ncKw" placeholder="e.g. netflix, spotify, disney"></div>
     <button class="btn btn-primary" onclick="saveNewCat()">Create Category</button>
@@ -538,23 +545,23 @@
 <script>
 'use strict';
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // DEFAULT DATA
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 const DEFAULT_CATS = [
-  { id:'dining',        name:'Dining',        emoji:'🍔', color:'#e8472a', kw:['mcdonald','kfc','burger','pizza','nando','subway','greggs','pret','costa','starbucks','cafe','coffee','restaurant','wagamama','leon','itsu','wasabi','zizzi','prezzo','harvester','wetherspoon','pub','bar','grill','sushi','curry','chippy','takeaway','deliveroo','just eat','uber eats'] },
-  { id:'transport',     name:'Transport',     emoji:'🚇', color:'#0288d1', kw:['tfl','uber','lyft','taxi','trainline','national rail','oyster','tube','rail','parking','petrol','shell','bp','esso','addison lee','bolt','lime','santander cycles','heathrow','gatwick','stansted','coach','megabus','national express','bus','train'] },
-  { id:'groceries',     name:'Groceries',     emoji:'🛒', color:'#2e7d32', kw:['tesco','sainsbury','asda','morrisons','waitrose','marks & spencer','m&s food','aldi','lidl','co-op','coop','ocado','iceland','spar','budgens','whole foods','costco','farmfoods'] },
-  { id:'shopping',      name:'Shopping',      emoji:'🛍️', color:'#7b1fa2', kw:['amazon','asos','ebay','primark','h&m','zara','topshop','next','boots','superdrug','argos','currys','john lewis','ikea','tk maxx','uniqlo','gap','river island','new look','boohoo','shein','depop','vinted','etsy','apple store','samsung'] },
-  { id:'entertainment', name:'Fun',           emoji:'🎬', color:'#f57c00', kw:['netflix','spotify','cinema','odeon','vue','cineworld','disney','apple tv','google play','steam','xbox','playstation','sky','amazon prime','now tv','youtube','ticket','theatre','museum','bowling','escape room','club','music'] },
-  { id:'health',        name:'Health',        emoji:'💊', color:'#00838f', kw:['gym','pharmacy','nhs','dentist','doctor','hospital','puregym','david lloyd','anytime fitness','virgin active','nuffield','holland & barrett','chemist','lloyds pharmacy','optician','fitness','pilates','yoga'] },
-  { id:'bills',         name:'Bills',         emoji:'💡', color:'#455a64', kw:['vodafone','ee','o2','three','bt','virgin media','sky broadband','council tax','utility','electric','gas','water','broadband','insurance','aviva','axa','direct line','rent','mortgage','barclays','hsbc','lloyds','natwest','halifax','monzo','revolut','starling'] },
-  { id:'others',        name:'Others',        emoji:'📦', color:'#78909c', kw:[] },
+  { id:'dining',        name:'Dining',        emoji:'ð', color:'#e8472a', kw:['mcdonald','kfc','burger','pizza','nando','subway','greggs','pret','costa','starbucks','cafe','coffee','restaurant','wagamama','leon','itsu','wasabi','zizzi','prezzo','harvester','wetherspoon','pub','bar','grill','sushi','curry','chippy','takeaway','deliveroo','just eat','uber eats'] },
+  { id:'transport',     name:'Transport',     emoji:'ð', color:'#0288d1', kw:['tfl','uber','lyft','taxi','trainline','national rail','oyster','tube','rail','parking','petrol','shell','bp','esso','addison lee','bolt','lime','santander cycles','heathrow','gatwick','stansted','coach','megabus','national express','bus','train'] },
+  { id:'groceries',     name:'Groceries',     emoji:'ð', color:'#2e7d32', kw:['tesco','sainsbury','asda','morrisons','waitrose','marks & spencer','m&s food','aldi','lidl','co-op','coop','ocado','iceland','spar','budgens','whole foods','costco','farmfoods'] },
+  { id:'shopping',      name:'Shopping',      emoji:'ðï¸', color:'#7b1fa2', kw:['amazon','asos','ebay','primark','h&m','zara','topshop','next','boots','superdrug','argos','currys','john lewis','ikea','tk maxx','uniqlo','gap','river island','new look','boohoo','shein','depop','vinted','etsy','apple store','samsung'] },
+  { id:'entertainment', name:'Fun',           emoji:'ð¬', color:'#f57c00', kw:['netflix','spotify','cinema','odeon','vue','cineworld','disney','apple tv','google play','steam','xbox','playstation','sky','amazon prime','now tv','youtube','ticket','theatre','museum','bowling','escape room','club','music'] },
+  { id:'health',        name:'Health',        emoji:'ð', color:'#00838f', kw:['gym','pharmacy','nhs','dentist','doctor','hospital','puregym','david lloyd','anytime fitness','virgin active','nuffield','holland & barrett','chemist','lloyds pharmacy','optician','fitness','pilates','yoga'] },
+  { id:'bills',         name:'Bills',         emoji:'ð¡', color:'#455a64', kw:['vodafone','ee','o2','three','bt','virgin media','sky broadband','council tax','utility','electric','gas','water','broadband','insurance','aviva','axa','direct line','rent','mortgage','barclays','hsbc','lloyds','natwest','halifax','monzo','revolut','starling'] },
+  { id:'others',        name:'Others',        emoji:'ð¦', color:'#78909c', kw:[] },
 ];
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // STORAGE
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 const S = {
   getTxs()   { return JSON.parse(localStorage.getItem('sw_txs') || '[]'); },
   setTxs(v)  { localStorage.setItem('sw_txs', JSON.stringify(v)); },
@@ -564,10 +571,10 @@ const S = {
   setBudget(v){ localStorage.setItem('sw_budget', String(v)); },
 };
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // DATE HELPERS
-// ═══════════════════════════════════════════════
-const todayStr = () => new Date().toISOString().split('T')[0];
+// âââââââââââââââââââââââââââââââââââââââââââââââ
+const todayStr = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); };
 const daysInMonth = (y,m) => new Date(y,m+1,0).getDate();
 const fmt = n => (n||0).toFixed(2);
 const fmtDate = d => {
@@ -594,9 +601,9 @@ function monthPrefix() {
   const n=new Date(); return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}`;
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // BUDGET MATH  (rolling daily)
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function calcBudget() {
   const budget = S.getBudget();
   if (!budget) return null;
@@ -624,9 +631,9 @@ function calcBudget() {
   return { budget, dailyBudget, spentToday, monthLeft, remaining, daysLeft };
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // CATEGORY HELPERS
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function detectCat(merchant) {
   const cats = S.getCats(); const m = merchant.toLowerCase();
   for (const c of cats) {
@@ -639,9 +646,9 @@ function getCat(id) {
   return S.getCats().find(c=>c.id===id) || S.getCats().find(c=>c.id==='others');
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // NAVIGATION
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 let curPage = 'dashboard';
 let dashTabMode = 'weekly';
 let chartMain = null; let chartBudget = null;
@@ -671,26 +678,26 @@ function renderPage(p) {
   if (p==='settings') renderSettings();
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // DASHBOARD
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function renderDash() {
   const bd = calcBudget();
   if (!bd) {
-    document.getElementById('heroAmt').textContent = '–';
+    document.getElementById('heroAmt').textContent = 'â';
     document.getElementById('heroHint').textContent = 'Set a monthly budget to get started';
-    document.getElementById('hSpent').textContent = '£0.00';
-    document.getElementById('hDaily').textContent = '–';
-    document.getElementById('hMonthLeft').textContent = '–';
+    document.getElementById('hSpent').textContent = 'Â£0.00';
+    document.getElementById('hDaily').textContent = 'â';
+    document.getElementById('hMonthLeft').textContent = 'â';
     document.getElementById('heroBar').style.width = '0%';
   } else {
     const todayLeft = bd.dailyBudget - bd.spentToday;
     const pct = bd.dailyBudget > 0 ? Math.min(100, bd.spentToday/bd.dailyBudget*100) : 0;
     document.getElementById('heroAmt').textContent = fmt(Math.max(0, todayLeft));
-    document.getElementById('heroHint').textContent = `of £${fmt(bd.dailyBudget)} daily budget`;
-    document.getElementById('hSpent').textContent = `£${fmt(bd.spentToday)}`;
-    document.getElementById('hDaily').textContent = `£${fmt(bd.dailyBudget)}`;
-    document.getElementById('hMonthLeft').textContent = `£${fmt(Math.max(0,bd.monthLeft))}`;
+    document.getElementById('heroHint').textContent = `of Â£${fmt(bd.dailyBudget)} daily budget`;
+    document.getElementById('hSpent').textContent = `Â£${fmt(bd.spentToday)}`;
+    document.getElementById('hDaily').textContent = `Â£${fmt(bd.dailyBudget)}`;
+    document.getElementById('hMonthLeft').textContent = `Â£${fmt(Math.max(0,bd.monthLeft))}`;
     const bar = document.getElementById('heroBar');
     bar.style.width = pct+'%';
     bar.classList.toggle('over', bd.spentToday > bd.dailyBudget);
@@ -714,14 +721,14 @@ function renderMainChart(mode) {
     ? dates.map(d=>new Date(d+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short'}))
     : dates.map(d=>new Date(d+'T12:00:00').getDate());
   const data = dates.map(d=>txs.filter(t=>t.date===d).reduce((s,t)=>s+t.amount,0));
-  document.getElementById('chartLbl').textContent = mode==='weekly' ? 'Spending — This Week' : 'Spending — This Month';
+  document.getElementById('chartLbl').textContent = mode==='weekly' ? 'Spending â This Week' : 'Spending â This Month';
   const ctx = document.getElementById('chartMain').getContext('2d');
   if (chartMain) chartMain.destroy();
   chartMain = new Chart(ctx, {
     type:'bar',
     data:{ labels, datasets:[{ data, backgroundColor: data.map((_,i)=>dates[i]===todayStr()?'#006493':'#cde5ff'), borderRadius:6, borderSkipped:false }] },
     options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{ y:{beginAtZero:true, ticks:{callback:v=>'£'+v.toFixed(0),font:{size:10}}, grid:{color:'#f5f5f5'}}, x:{ticks:{font:{size:10}}, grid:{display:false}} } }
+      scales:{ y:{beginAtZero:true, ticks:{callback:v=>'Â£'+v.toFixed(0),font:{size:10}}, grid:{color:'#f5f5f5'}}, x:{ticks:{font:{size:10}}, grid:{display:false}} } }
   });
 }
 
@@ -730,7 +737,7 @@ function renderCatBreakdown(mode) {
   const txs = S.getTxs().filter(t=>dates.has(t.date));
   const total = txs.reduce((s,t)=>s+t.amount,0);
   const cats = S.getCats();
-  document.getElementById('catLbl').textContent = mode==='weekly' ? 'Categories — This Week' : 'Categories — This Month';
+  document.getElementById('catLbl').textContent = mode==='weekly' ? 'Categories â This Week' : 'Categories â This Month';
 
   const byCat = {};
   cats.forEach(c=>byCat[c.id]=0);
@@ -744,7 +751,7 @@ function renderCatBreakdown(mode) {
       <div class="cat-dot" style="background:${c.color}"></div>
       <span class="cat-name-lbl">${c.emoji} ${c.name}</span>
       <div class="cat-bar-wrap"><div class="cat-bar" style="width:${total?c.spent/total*100:0}%;background:${c.color}"></div></div>
-      <span class="cat-amt">£${fmt(c.spent)}</span>
+      <span class="cat-amt">Â£${fmt(c.spent)}</span>
     </div>`).join('');
 }
 
@@ -755,9 +762,9 @@ function renderRecent() {
   el.innerHTML = txs.map(t=>txHTML(t)).join('');
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // TRANSACTIONS PAGE
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function renderTxPage() {
   const txs = S.getTxs(); const cats = S.getCats();
   // Filter chips
@@ -783,7 +790,7 @@ function renderTxPage() {
     <div style="margin-bottom:12px;">
       <div class="date-header">
         <span>${date===todayStr()?'Today':fmtDate(date)}</span>
-        <span>£${fmt(items.reduce((s,t)=>s+t.amount,0))}</span>
+        <span>Â£${fmt(items.reduce((s,t)=>s+t.amount,0))}</span>
       </div>
       <div class="card" style="padding:0 16px;">${items.map(t=>txHTML(t,true)).join('')}</div>
     </div>`).join('');
@@ -798,15 +805,15 @@ function txHTML(t, clickable=false) {
     <div class="tx-icon" style="background:${c.color}22;">${c.emoji}</div>
     <div class="tx-info">
       <div class="tx-merchant">${t.merchant}</div>
-      <div class="tx-meta">${c.name} · ${fmtDateShort(t.date)}</div>
+      <div class="tx-meta">${c.name} Â· ${fmtDateShort(t.date)}</div>
     </div>
-    <div class="tx-amount">-£${fmt(t.amount)}</div>
+    <div class="tx-amount">-Â£${fmt(t.amount)}</div>
   </div>`;
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // BUDGET PAGE
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function renderBudgetPage() {
   const budget = S.getBudget();
   document.getElementById('budgetInput').value = budget || '';
@@ -820,11 +827,11 @@ function renderBudgetPage() {
   const color = pct<70?'#2e7d32':pct<90?'#f57c00':'#ba1a1a';
   el.innerHTML = `
     <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
-      <span>£${fmt(monthTotal)} spent</span><span style="color:var(--on-surface-variant)">of £${fmt(budget)}</span>
+      <span>Â£${fmt(monthTotal)} spent</span><span style="color:var(--on-surface-variant)">of Â£${fmt(budget)}</span>
     </div>
     <div class="budget-bar-wrap"><div class="budget-bar" style="width:${pct}%;background:${color}"></div></div>
     <div style="font-size:12px;color:${color};font-weight:600;margin-top:4px;">
-      ${budget-monthTotal>=0?`£${fmt(budget-monthTotal)} remaining this month`:`£${fmt(monthTotal-budget)} over budget!`}
+      ${budget-monthTotal>=0?`Â£${fmt(budget-monthTotal)} remaining this month`:`Â£${fmt(monthTotal-budget)} over budget!`}
     </div>`;
   renderBudgetChart();
 }
@@ -845,20 +852,20 @@ function renderBudgetChart() {
       {label:'Daily limit',data:dates.map(()=>baseDailyBudget),type:'line',borderColor:'#006493',borderWidth:2,borderDash:[4,4],pointRadius:0,fill:false}
     ]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-      scales:{y:{beginAtZero:true,ticks:{callback:v=>'£'+v.toFixed(0),font:{size:10}},grid:{color:'#f5f5f5'}},x:{ticks:{font:{size:10}},grid:{display:false}}}}
+      scales:{y:{beginAtZero:true,ticks:{callback:v=>'Â£'+v.toFixed(0),font:{size:10}},grid:{color:'#f5f5f5'}},x:{ticks:{font:{size:10}},grid:{display:false}}}}
   });
 }
 
 function saveBudget() {
   const v=parseFloat(document.getElementById('budgetInput').value);
   if (!v||v<=0){snack('Please enter a valid budget amount');return;}
-  S.setBudget(v); snack(`Monthly budget set to £${fmt(v)}`);
+  S.setBudget(v); snack(`Monthly budget set to Â£${fmt(v)}`);
   renderBudgetPage(); if(curPage==='dashboard') renderDash();
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // SETTINGS
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function renderSettings() {
   const cats=S.getCats();
   document.getElementById('catList').innerHTML=cats.map(c=>`
@@ -866,7 +873,7 @@ function renderSettings() {
       <span style="font-size:22px;margin-right:14px;">${c.emoji}</span>
       <div class="sitem-text">
         <div class="sitem-title">${c.name}</div>
-        <div class="sitem-sub">${(c.kw||[]).length} keywords&nbsp;·&nbsp;<span style="color:${c.color}">●</span></div>
+        <div class="sitem-sub">${(c.kw||[]).length} keywords&nbsp;Â·&nbsp;<span style="color:${c.color}">â</span></div>
       </div>
       ${c.id!=='others'?`<span class="material-icons-round" style="color:var(--error);cursor:pointer;font-size:20px;" onclick="deleteCat('${c.id}')">delete_outline</span>`:''}
     </div>`).join('');
@@ -880,9 +887,9 @@ function deleteCat(id) {
   S.setCats(cats); S.setTxs(txs); renderSettings(); snack(T('catDeleted'));
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // MODALS
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function openAdd(pre={}) {
   editingId=pre.id||null;
   document.getElementById('addModalTitle').textContent=editingId?'Edit Transaction':'Add Transaction';
@@ -930,9 +937,9 @@ function autoCategory() {
   });
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // TRANSACTION CRUD
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function saveTx() {
   const merchant=document.getElementById('txMerchant').value.trim();
   const amount=parseFloat(document.getElementById('txAmount').value);
@@ -961,13 +968,13 @@ function deleteTxCurrent() {
   closeModal('addModal'); snack(T('txDeleted')); renderPage(curPage);
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // OCR
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 async function handleImg(event) {
   const file=event.target.files[0]; if(!file) return;
   closeModal('uploadModal');
-  document.getElementById('loaderText').textContent='Reading screenshot…';
+  document.getElementById('loaderText').textContent='Reading screenshotâ¦';
   document.getElementById('loader').classList.add('show');
   try {
     const worker=await Tesseract.createWorker('eng');
@@ -991,7 +998,7 @@ async function handleImg(event) {
 
 function parseWallet(text) {
   // Amount
-  const aPats=[/£\s*(\d+[.,]\d{2})/,/(\d+[.,]\d{2})\s*GBP/i,/(?:total|amount|paid)[:\s]+£?\s*(\d+[.,]\d{2})/i,/(\d+[.,]\d{2})/];
+  const aPats=[/Â£\s*(\d+[.,]\d{2})/,/(\d+[.,]\d{2})\s*GBP/i,/(?:total|amount|paid)[:\s]+Â£?\s*(\d+[.,]\d{2})/i,/(\d+[.,]\d{2})/];
   let amount=null;
   for(const p of aPats){const m=text.match(p);if(m){amount=parseFloat(m[1].replace(',','.'));break;}}
 
@@ -1005,7 +1012,7 @@ function parseWallet(text) {
   let merchant='';
   for(const line of lines){
     if(/^\d+[.,]\d{2}$/.test(line))continue;
-    if(/^[£$€]/.test(line))continue;
+    if(/^[Â£$â¬]/.test(line))continue;
     if(/\d{4}-\d{2}-\d{2}/.test(line))continue;
     if(/payment|transaction|google|wallet|pay|receipt|approved|declined|card|account/i.test(line))continue;
     merchant=line; break;
@@ -1013,13 +1020,13 @@ function parseWallet(text) {
   return {amount,date,merchant};
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // NEW CATEGORY
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function saveNewCat() {
   const name=document.getElementById('ncName').value.trim();
   if(!name){snack(T('enterName'));return;}
-  const emoji=document.getElementById('ncEmoji').value.trim()||'📌';
+  const emoji=document.getElementById('ncEmoji').value.trim()||'ð';
   const color=document.getElementById('ncColor').value;
   const kw=document.getElementById('ncKw').value.split(',').map(k=>k.trim().toLowerCase()).filter(k=>k);
   const id=name.toLowerCase().replace(/\s+/g,'_')+'_'+Date.now().toString(36);
@@ -1028,9 +1035,9 @@ function saveNewCat() {
   S.setCats(cats); closeModal('catModal'); renderSettings(); snack(T('catCreated', name));
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // DATA IO
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 function exportData() {
   const d={txs:S.getTxs(),cats:S.getCats(),budget:S.getBudget(),exportedAt:new Date().toISOString()};
   const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
@@ -1059,9 +1066,9 @@ function clearAll() {
   snack(T('dataCleared')); renderPage(curPage);
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // UI HELPERS
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 let snackTimer;
 function snack(msg) {
   const el=document.getElementById('snack');
@@ -1074,9 +1081,9 @@ document.querySelectorAll('.overlay').forEach(o=>{
   o.addEventListener('click',e=>{ if(e.target===o) o.classList.remove('open'); });
 });
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // INIT
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 (function init() {
   curLang = localStorage.getItem('sw_lang') || 'en';
   applyLang();
@@ -1085,9 +1092,9 @@ document.querySelectorAll('.overlay').forEach(o=>{
   renderDash();
 })();
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // LANGUAGE / i18n
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 const LANG = {
   en: {
     dashboard: 'Dashboard',
@@ -1095,7 +1102,7 @@ const LANG = {
     budget: 'Budget',
     settings: 'Settings',
     todayLeft: 'Today's Budget Left',
-    ofDaily: 'of £{0} daily budget',
+    ofDaily: 'of Â£{0} daily budget',
     spentToday: 'Spent Today',
     dailyBudget: 'Daily Budget',
     monthLeft: 'Month Left',
@@ -1116,7 +1123,7 @@ const LANG = {
     about: 'About',
     addTx: 'Add Transaction',
     merchant: 'Merchant / Description',
-    amount: 'Amount (£)',
+    amount: 'Amount (Â£)',
     date: 'Date',
     category: 'Category',
     save: 'Save',
@@ -1125,69 +1132,69 @@ const LANG = {
     scanReceipt: 'Scan Screenshot',
     manualEntry: 'Manual Entry',
     fillFields: 'Please fill in all fields',
-    txSaved: 'Transaction saved ✓',
-    txUpdated: 'Transaction updated ✓',
+    txSaved: 'Transaction saved â',
+    txUpdated: 'Transaction updated â',
     txDeleted: 'Deleted',
     dataExported: 'Data exported!',
     importedOk: 'Imported successfully!',
-    importFail: 'Invalid file — import failed',
+    importFail: 'Invalid file â import failed',
     clearConfirm: 'Clear ALL data? This cannot be undone.',
     dataCleared: 'All data cleared',
-    catCreated: '"{0}" created ✓',
+    catCreated: '"{0}" created â',
     catDeleted: 'Category deleted',
     enterName: 'Please enter a name',
     noBudget: 'Set a monthly budget to get started',
     deleteConfirm: 'Delete this transaction?',
   },
   zh: {
-    dashboard: '概览',
-    transactions: '账单',
-    budget: '预算',
-    settings: '设置',
-    todayLeft: '今日剩余预算',
-    ofDaily: '每日预算 £{0}',
-    spentToday: '今日已花',
-    dailyBudget: '今日预算',
-    monthLeft: '本月剩余',
-    weekly: '本周',
-    monthly: '本月',
-    noTx: '暂无账单记录',
-    allCats: '全部',
-    monthlyBudget: '月度预算',
-    setBudget: '设置预算',
-    setBudgetHint: '请输入每月消费上限',
-    budgetPlaceholder: '例如 800',
-    categories: '分类',
-    dataSection: '数据',
-    exportData: '导出数据',
-    importData: '导入数据',
-    clearAll: '清除全部数据',
-    langLabel: '显示语言',
-    about: '关于',
-    addTx: '添加账单',
-    merchant: '商家 / 描述',
-    amount: '金额 (£)',
-    date: '日期',
-    category: '分类',
-    save: '保存',
-    delete: '删除',
-    cancel: '取消',
-    scanReceipt: '扫描截图',
-    manualEntry: '手动输入',
-    fillFields: '请填写所有字段',
-    txSaved: '账单已保存 ✓',
-    txUpdated: '账单已更新 ✓',
-    txDeleted: '已删除',
-    dataExported: '数据已导出！',
-    importedOk: '导入成功！',
-    importFail: '文件无效，导入失败',
-    clearConfirm: '确定清除所有数据？此操作无法撤销。',
-    dataCleared: '所有数据已清除',
-    catCreated: '"{0}" 已创建 ✓',
-    catDeleted: '分类已删除',
-    enterName: '请输入名称',
-    noBudget: '请先设置月度预算',
-    deleteConfirm: '确定删除此账单？',
+    dashboard: 'æ¦è§',
+    transactions: 'è´¦å',
+    budget: 'é¢ç®',
+    settings: 'è®¾ç½®',
+    todayLeft: 'ä»æ¥å©ä½é¢ç®',
+    ofDaily: 'æ¯æ¥é¢ç® Â£{0}',
+    spentToday: 'ä»æ¥å·²è±',
+    dailyBudget: 'ä»æ¥é¢ç®',
+    monthLeft: 'æ¬æå©ä½',
+    weekly: 'æ¬å¨',
+    monthly: 'æ¬æ',
+    noTx: 'ææ è´¦åè®°å½',
+    allCats: 'å¨é¨',
+    monthlyBudget: 'æåº¦é¢ç®',
+    setBudget: 'è®¾ç½®é¢ç®',
+    setBudgetHint: 'è¯·è¾å¥æ¯ææ¶è´¹ä¸é',
+    budgetPlaceholder: 'ä¾å¦ 800',
+    categories: 'åç±»',
+    dataSection: 'æ°æ®',
+    exportData: 'å¯¼åºæ°æ®',
+    importData: 'å¯¼å¥æ°æ®',
+    clearAll: 'æ¸é¤å¨é¨æ°æ®',
+    langLabel: 'æ¾ç¤ºè¯­è¨',
+    about: 'å³äº',
+    addTx: 'æ·»å è´¦å',
+    merchant: 'åå®¶ / æè¿°',
+    amount: 'éé¢ (Â£)',
+    date: 'æ¥æ',
+    category: 'åç±»',
+    save: 'ä¿å­',
+    delete: 'å é¤',
+    cancel: 'åæ¶',
+    scanReceipt: 'æ«ææªå¾',
+    manualEntry: 'æå¨è¾å¥',
+    fillFields: 'è¯·å¡«åææå­æ®µ',
+    txSaved: 'è´¦åå·²ä¿å­ â',
+    txUpdated: 'è´¦åå·²æ´æ° â',
+    txDeleted: 'å·²å é¤',
+    dataExported: 'æ°æ®å·²å¯¼åºï¼',
+    importedOk: 'å¯¼å¥æåï¼',
+    importFail: 'æä»¶æ æï¼å¯¼å¥å¤±è´¥',
+    clearConfirm: 'ç¡®å®æ¸é¤æææ°æ®ï¼æ­¤æä½æ æ³æ¤éã',
+    dataCleared: 'æææ°æ®å·²æ¸é¤',
+    catCreated: '"{0}" å·²åå»º â',
+    catDeleted: 'åç±»å·²å é¤',
+    enterName: 'è¯·è¾å¥åç§°',
+    noBudget: 'è¯·åè®¾ç½®æåº¦é¢ç®',
+    deleteConfirm: 'ç¡®å®å é¤æ­¤è´¦åï¼',
   }
 };
 
@@ -1235,12 +1242,12 @@ function applyLang() {
   }
 }
 
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 // SERVICE WORKER REGISTRATION
-// ═══════════════════════════════════════════════
+// âââââââââââââââââââââââââââââââââââââââââââââââ
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/spendwise/sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then(r => console.log('SW registered:', r.scope))
       .catch(e => console.log('SW error:', e));
   });
