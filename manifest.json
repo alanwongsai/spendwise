@@ -2,7 +2,7 @@
   "id": "/spendwise/",
   "name": "SpendWise",
   "short_name": "SpendWise",
-  "description": "Track your GBP spending with Google Wallet screenshots. Rolling daily budget and category breakdowns.",
+  "description": "Track your daily spending with a rolling budget tracker.",
   "start_url": "/spendwise/index.html",
   "scope": "/spendwise/",
   "display": "standalone",
@@ -14,31 +14,30 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/spendwise/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-192.png",
+      "src": "/spendwise/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "/spendwise/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/spendwise/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
   "categories": ["finance", "productivity"],
-  "screenshots": [],
-  "shortcuts": []
+  "prefer_related_applications": false
 }
